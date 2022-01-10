@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>First Rest Demo</h1>
+<button id="btn1">Fetch Players</button>
+<ul id="players"></ul>
+
+<script type="application/javascript">
+  function updateUI(){
+      fetch("api/players")
+          .then(r=>r.json())
+      .then(data=>{
+          const listItems = data.map(p=>"<li>"+p.name+"</li>").join("\n")
+          document.getElementById("players").innerHTML = listItems
+      })
+  }
+  document.getElementById("btn1").onclick = updateUI;
+</script>
+
+</body>
+</html>
