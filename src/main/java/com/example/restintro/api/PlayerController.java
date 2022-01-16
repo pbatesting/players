@@ -33,7 +33,7 @@ public class PlayerController {
 
     @GetMapping("/version")
     String version() {
-      return "\"v\": 2";
+      return "{\"v\": 3}";
     }
 
 
